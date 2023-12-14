@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="WpfProject.Views.UpdateProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfProject.Views"
+             xmlns:models="clr-namespace:WpfProject.Models"
+             xmlns:viewmodels="clr-namespace:WpfProject.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:UpdateProductViewModel}"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="500" d:DesignWidth="300">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+
+            <Label Content="{Binding }"/>
+            <Label Content="{Binding SelectedProduct.Price}"/>
+            <Label Content="{Binding SelectedProduct.Description}"/>
+            <Label Content="{Binding SelectedProduct.ArticleNumber}"/>
+
+            <Button Command="{Binding NavigateToListCommand}" Content="Save"></Button>
+        </StackPanel>
+
+        
+    </Grid>
+</UserControl>

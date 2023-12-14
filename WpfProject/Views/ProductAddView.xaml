@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="WpfProject.Views.ProductAddView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfProject.Views"
+             xmlns:viewmodels="clr-namespace:WpfProject.ViewModels"
+             xmlns:models="clr-namespace:WpfProject.Models"
+             d:DataContext="{d:DesignInstance Type=viewmodels:ProductAddViewModel}"
+             mc:Ignorable="d" 
+             Background="white"
+             d:DesignHeight="500" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            
+        </Grid.RowDefinitions>
+        <Label  Grid.Row="0" Content="Add a product" HorizontalContentAlignment="Center" FontSize="16"/>
+        <StackPanel Grid.Row="1">
+            <Label Content="Enter Title"/>
+            <TextBox Padding="5" Text="{Binding ProductForm.Title}"/>
+            <Label Content="Enter Article number"/>
+            <TextBox Padding="5" Text="{Binding ProductForm.ArticleNumber}"/>
+            <Label Content="Enter Description"/>
+            <TextBox Padding="5" Text="{Binding ProductForm.Description}"/>
+            <Label Content="Enter Price"/>
+            <TextBox Padding="5" Text="{Binding ProductForm.Price}"/>
+            <Button Padding="5" Margin="0, 20" Content="Add to product to list" Command="{Binding AddProductTolistCommand}"/>
+
+        </StackPanel>
+        <Button Content="Navigate to Main Menu" Command="{Binding NavigateToMainMenuCommand}" VerticalAlignment="Center" Grid.Row="2" Padding="5"/>
+    </Grid>
+</UserControl>
